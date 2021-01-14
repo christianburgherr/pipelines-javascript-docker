@@ -13,8 +13,8 @@ variables:
 
 steps:
 - task: Docker@2
-  displayName: Build an image
+  displayName: Build and push an image to container registry
   inputs:
+    command: buildAndPush
     repository: $(imageName)
-    command: build
-    Dockerfile: app/Dockerfile
+    dockerfile: app/Dockerfile
